@@ -25,13 +25,16 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-# Custom CSS
+# Custom CSS - Enhanced Professional Dashboard Design
 st.markdown("""
     <style>
+    /* Main background with gradient */
     .main {
         background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
         background-attachment: fixed;
     }
+    
+    /* Content area styling */
     .block-container {
         background-color: rgba(255, 255, 255, 0.95);
         padding: 2rem;
@@ -39,8 +42,177 @@ st.markdown("""
         box-shadow: 0 10px 30px rgba(0,0,0,0.2);
         margin-top: 1rem;
     }
+    
     /* Headers */
-    h1, h2, h3 { color: #1a1a1a !important; }
+    h1 {
+        color: #1a1a1a !important;
+        font-weight: 700 !important;
+        font-size: 2.5rem !important;
+        margin-bottom: 0.5rem !important;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+    
+    h2, h3 {
+        color: #2c3e50 !important;
+        font-weight: 600 !important;
+    }
+    
+    /* All text elements */
+    p, span, div, label, .stMarkdown {
+        color: #1a1a1a !important;
+    }
+    
+    /* Metric styling with gradient backgrounds */
+    [data-testid="stMetricValue"] {
+        color: #1a1a1a !important;
+        font-size: 2rem !important;
+        font-weight: 700 !important;
+    }
+    
+    [data-testid="stMetricLabel"] {
+        color: #2c3e50 !important;
+        font-weight: 600 !important;
+        font-size: 1rem !important;
+    }
+    
+    [data-testid="stMetricDelta"] {
+        color: #1a1a1a !important;
+    }
+    
+    /* Cards effect for metrics */
+    [data-testid="stMetric"] {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        padding: 1.5rem;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    
+    [data-testid="stMetric"] [data-testid="stMetricLabel"],
+    [data-testid="stMetric"] [data-testid="stMetricValue"],
+    [data-testid="stMetric"] [data-testid="stMetricDelta"] {
+        color: #ffffff !important;
+    }
+    
+    /* Success/Info/Warning boxes */
+    .stSuccess, .stInfo, .stWarning {
+        background-color: rgba(255, 255, 255, 0.9) !important;
+        border-radius: 10px !important;
+        padding: 1rem !important;
+        border-left: 5px solid #28a745 !important;
+    }
+    
+    .stSuccess > div, .stInfo > div, .stWarning > div {
+        color: #1a1a1a !important;
+        font-weight: 500 !important;
+    }
+    
+    .stInfo {
+        border-left-color: #17a2b8 !important;
+    }
+    
+    .stWarning {
+        border-left-color: #ffc107 !important;
+    }
+    
+    /* Selectbox and input styling */
+    .stSelectbox label, .stTextInput label {
+        color: #ffffff !important;
+        font-weight: 600 !important;
+        font-size: 1.1rem !important;
+        text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+    }
+    
+    /* Selectbox dropdown styling */
+    .stSelectbox > div > div {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border: 2px solid #11998e !important;
+        border-radius: 8px !important;
+    }
+    
+    /* Selectbox selected value */
+    .stSelectbox [data-baseweb="select"] > div {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        color: #1a1a1a !important;
+    }
+    
+    /* Dropdown menu options list */
+    [data-baseweb="popover"] {
+        background-color: #ffffff !important;
+    }
+    
+    [data-baseweb="menu"] {
+        background-color: #ffffff !important;
+    }
+    
+    /* Individual dropdown options */
+    [role="option"] {
+        background-color: #ffffff !important;
+        color: #1a1a1a !important;
+    }
+    
+    /* Dropdown option on hover */
+    [role="option"]:hover {
+        background-color: #11998e !important;
+        color: #ffffff !important;
+    }
+    
+    /* Selected option in dropdown */
+    [aria-selected="true"] {
+        background-color: #38ef7d !important;
+        color: #ffffff !important;
+    }
+    
+    /* Radio buttons */
+    .stRadio label {
+        color: #1a1a1a !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Sidebar styling */
+    [data-testid="stSidebar"] {
+        background: linear-gradient(180deg, #0f5132 0%, #198754 100%);
+    }
+    
+    [data-testid="stSidebar"] * {
+        color: #ffffff !important;
+    }
+    
+    [data-testid="stSidebar"] .stRadio label {
+        color: #ffffff !important;
+    }
+    
+    /* Divider */
+    hr {
+        border-color: rgba(0,0,0,0.1) !important;
+    }
+    
+    /* Button styling */
+    .stButton button {
+        background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        padding: 0.5rem 2rem;
+        font-weight: 600;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        transition: transform 0.2s;
+    }
+    
+    .stButton button:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+    }
+    
+    /* Footer styling */
+    footer {
+        color: #1a1a1a !important;
+    }
+    
+    /* Plotly charts */
+    .js-plotly-plot {
+        border-radius: 10px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
     
     /* Login Box Styling */
     .login-box {
@@ -295,6 +467,42 @@ def get_market_insights(df, current_district, current_crop, days_ahead=7):
         
     return insights
 
+def get_crop_reasoning(soil_record, crop, yield_val):
+    """
+    Generate reasoning for why a crop is recommended based on soil conditions
+    """
+    soil_type = soil_record['Soil_Type']
+    ph = soil_record['pH_Level']
+    nitrogen = soil_record['Nitrogen_Content_kg_ha']
+    organic = soil_record['Organic_Matter_Percent']
+    
+    reasoning = f"এই অঞ্চলে {crop} চাষের ঐতিহাসিক সাফল্য রয়েছে। "
+    
+    # pH-based reasoning
+    if 6.0 <= ph <= 7.5:
+        reasoning += "মাটির পিএইচ স্তর আদর্শ পরিসরে রয়েছে যা এই ফসলের জন্য উপযুক্ত। "
+    elif ph < 6.0:
+        reasoning += "মাটি কিছুটা অম্লীয় তবে এই ফসল তাতে মানানসই হতে পারে। "
+    else:
+        reasoning += "মাটি ক্ষারীয় প্রকৃতির, তবে এই ফসল তাতে ভালো জন্মায়। "
+    
+    # Nitrogen content reasoning
+    if nitrogen > 150:
+        reasoning += "উচ্চ নাইট্রোজেন সামগ্রী ফসলের বৃদ্ধিতে সহায়ক। "
+    elif nitrogen > 100:
+        reasoning += "মাঝারি নাইট্রোজেন স্তর পর্যাপ্ত। "
+    else:
+        reasoning += "নাইট্রোজেন সার প্রয়োগ বিবেচনা করুন। "
+    
+    # Organic matter reasoning
+    if organic > 2.0:
+        reasoning += f"উচ্চ জৈব পদার্থ ({organic:.1f}%) মাটির উর্বরতা নিশ্চিত করে। "
+    
+    # Yield-based reasoning
+    reasoning += f"ঐতিহাসিক তথ্য অনুযায়ী, গড় ফলন {yield_val:.1f} কুইন্টাল/হেক্টর অর্জন করা সম্ভব।"
+    
+    return reasoning
+
 # --- Sidebar ---
 st.sidebar.markdown("**এআই চালিত কৃষি বুদ্ধিমত্তা**")
 menu = st.sidebar.radio("মডিউল নির্বাচন করুন:", ["📊 মূল্য পূর্বাভাস (এআই)", "💰 সেরা বাজার খুঁজুন", "🌱 মাটি ও ফসল পরামর্শদাতা"])
@@ -366,8 +574,13 @@ if menu == "📊 মূল্য পূর্বাভাস (এআই)":
     filtered_df = price_df[(price_df['District_Name'] == selected_district) & (price_df['Crop_Name'] == selected_crop)].sort_values('Price_Date')
 
     if len(filtered_df) > 10:
+        # Feature Engineering
         filtered_df['Date_Ordinal'] = filtered_df['Price_Date'].map(datetime.datetime.toordinal)
-        X = filtered_df[['Date_Ordinal']]
+        filtered_df['Month'] = filtered_df['Price_Date'].dt.month
+        filtered_df['Week'] = filtered_df['Price_Date'].dt.isocalendar().week
+        filtered_df['Year'] = filtered_df['Price_Date'].dt.year
+        
+        X = filtered_df[['Date_Ordinal', 'Month', 'Week', 'Year']]
         y = filtered_df['Price_Tk_kg']
         model = RandomForestRegressor(n_estimators=100, random_state=42, n_jobs=-1)
         model.fit(X, y)
@@ -376,16 +589,74 @@ if menu == "📊 মূল্য পূর্বাভাস (এআই)":
         future_dates = [last_date + datetime.timedelta(days=i) for i in range(1, 31)]
         future_data = pd.DataFrame({'Price_Date': future_dates})
         future_data['Date_Ordinal'] = future_data['Price_Date'].map(datetime.datetime.toordinal)
+        future_data['Month'] = future_data['Price_Date'].dt.month
+        future_data['Week'] = future_data['Price_Date'].dt.isocalendar().week
+        future_data['Year'] = future_data['Price_Date'].dt.year
         
-        predictions = model.predict(future_data[['Date_Ordinal']])
+        # Get predictions with confidence intervals
+        predictions = model.predict(future_data[['Date_Ordinal', 'Month', 'Week', 'Year']])
+        
+        # Calculate confidence intervals using tree predictions
+        tree_predictions = np.array([tree.predict(future_data[['Date_Ordinal', 'Month', 'Week', 'Year']]) for tree in model.estimators_])
+        std_predictions = tree_predictions.std(axis=0)
+        
         future_data['Predicted_Price'] = predictions
+        future_data['Upper_Bound'] = predictions + 1.96 * std_predictions
+        future_data['Lower_Bound'] = predictions - 1.96 * std_predictions
         
-        # Plot
+        # Plot with confidence intervals
         st.subheader(f"মূল্য প্রবণতা: {translate_bn(selected_crop, crop_translation)}")
         fig = go.Figure()
-        fig.add_trace(go.Scatter(x=filtered_df['Price_Date'], y=filtered_df['Price_Tk_kg'], mode='lines', name='ঐতিহাসিক', line=dict(color='#1f77b4', width=2)))
-        fig.add_trace(go.Scatter(x=future_data['Price_Date'], y=future_data['Predicted_Price'], mode='lines', name='পূর্বাভাস', line=dict(color='#00cc96', width=2)))
-        st.plotly_chart(fig, width='stretch')
+        
+        # Historical data
+        fig.add_trace(go.Scatter(
+            x=filtered_df['Price_Date'], 
+            y=filtered_df['Price_Tk_kg'], 
+            mode='lines', 
+            name='ঐতিহাসিক', 
+            line=dict(color='#1f77b4', width=2)
+        ))
+        
+        # Predicted data
+        fig.add_trace(go.Scatter(
+            x=future_data['Price_Date'], 
+            y=future_data['Predicted_Price'], 
+            mode='lines', 
+            name='পূর্বাভাস', 
+            line=dict(color='#00cc96', width=2)
+        ))
+        
+        # Confidence interval upper bound
+        fig.add_trace(go.Scatter(
+            x=future_data['Price_Date'],
+            y=future_data['Upper_Bound'],
+            mode='lines',
+            name='উর্ধ্ব সীমা',
+            line=dict(width=0),
+            showlegend=False,
+            hoverinfo='skip'
+        ))
+        
+        # Confidence interval lower bound with fill
+        fig.add_trace(go.Scatter(
+            x=future_data['Price_Date'],
+            y=future_data['Lower_Bound'],
+            mode='lines',
+            name='নিম্ন সীমা',
+            line=dict(width=0),
+            fillcolor='rgba(0, 204, 150, 0.2)',
+            fill='tonexty',
+            showlegend=True,
+            hoverinfo='skip'
+        ))
+        
+        fig.update_layout(
+            xaxis_title='তারিখ',
+            yaxis_title='মূল্য (৳/কেজি)',
+            hovermode='x unified'
+        )
+        
+        st.plotly_chart(fig, use_container_width=True)
 
         current_price = filtered_df.iloc[-1]['Price_Tk_kg']
         avg_price = predictions.mean()
@@ -459,10 +730,33 @@ elif menu == "💰 সেরা বাজার খুঁজুন":
         market_data['Net_Profit'] = market_data['Price_Tk_kg'] - transport_cost
         best_market = market_data.sort_values('Net_Profit', ascending=False).iloc[0]
         
-        st.success(f"🏆 সেরা বাজার: **{translate_bn(best_market['District_Name'], district_translation)}** (নিট লাভ: ৳{to_bengali_number(f'{best_market['Net_Profit']:.2f}')})")
+        # Enhanced Net Profit Visualization with highlighted card
+        st.markdown(f"""
+        <div style='background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
+                    padding: 2rem; 
+                    border-radius: 15px; 
+                    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+                    text-align: center;
+                    margin: 1rem 0;'>
+            <h2 style='color: white; margin: 0; font-size: 1.5rem;'>🏆 সেরা বাজার</h2>
+            <h1 style='color: #FFD700; margin: 0.5rem 0; font-size: 2.5rem;'>{translate_bn(best_market['District_Name'], district_translation)}</h1>
+            <h3 style='color: white; margin: 0;'>নিট লাভ: ৳{to_bengali_number(f"{best_market['Net_Profit']:.2f}")}/কেজি</h3>
+            <p style='color: rgba(255,255,255,0.9); margin-top: 1rem;'>মূল্য: ৳{to_bengali_number(f"{best_market['Price_Tk_kg']:.2f}")} | পরিবহন: ৳{to_bengali_number(f"{transport_cost:.2f}")}</p>
+        </div>
+        """, unsafe_allow_html=True)
         
-        fig = px.bar(market_data.sort_values('Net_Profit', ascending=True), x='Net_Profit', y='District_Name', orientation='h', color='Net_Profit', color_continuous_scale='Greens')
-        st.plotly_chart(fig, width='stretch')
+        st.subheader("📊 সকল জেলার তুলনা")
+        fig = px.bar(
+            market_data.sort_values('Net_Profit', ascending=True), 
+            x='Net_Profit', 
+            y='District_Name', 
+            orientation='h', 
+            color='Net_Profit', 
+            color_continuous_scale='Greens',
+            labels={'Net_Profit': 'নিট লাভ (৳/কেজি)', 'District_Name': 'জেলা'}
+        )
+        fig.update_layout(showlegend=False)
+        st.plotly_chart(fig, use_container_width=True)
 
 # -----------------------------------------------------------------------------
 # MODULE 3: SOIL ADVISOR
@@ -497,8 +791,14 @@ elif menu == "🌱 মাটি ও ফসল পরামর্শদাতা"
     dist_prod = prod_df[prod_df['District_Name'] == target_district]
     top_crops = dist_prod.groupby('Crop_Name')['Yield_Quintals_per_Ha'].mean().sort_values(ascending=False).head(5)
 
+    # Enhanced crop recommendations with reasoning
     for idx, (crop, yield_val) in enumerate(top_crops.items(), 1):
-        st.info(f"#{idx} {translate_bn(crop, crop_translation)} - ঐতিহাসিক ফলন: {to_bengali_number(f'{yield_val:.1f}')} কুইন্টাল/হেক্টর")
+        # Get reasoning based on soil conditions
+        reasoning = get_crop_reasoning(soil_record, crop, yield_val)
+        
+        with st.expander(f"#{idx} {translate_bn(crop, crop_translation)} - ঐতিহাসিক ফলন: {to_bengali_number(f'{yield_val:.1f}')} কুইন্টাল/হেক্টর"):
+            st.markdown(f"**কেন এই ফসলটি উপযুক্ত:**")
+            st.write(reasoning)
 
 # Footer
 st.markdown("<br><hr><div style='text-align: center; color: #555;'>Agri-Smart BD | Built for AI Build-a-thon 2025</div>", unsafe_allow_html=True)
