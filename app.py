@@ -409,7 +409,7 @@ if menu == "📊 মূল্য পূর্বাভাস (এআই)":
         with c_sms2:
             st.write("")
             st.write("")
-            send_btn = st.button("🚀 পাঠান", type="primary", width='stretch')
+            send_btn = st.button("🚀 পাঠান", type="primary", use_container_width=True)
             
         if send_btn:
             # Login check enforcement (Optional, but adds value)
