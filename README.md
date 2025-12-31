@@ -256,8 +256,8 @@ We welcome contributions! If you'd like to improve this project:
 **For inquiries, partnerships, or data contributions:**
 
 - 📧 Email: [Contact through GitHub Issues]
-- 🌐 Live Demo: [https://agri-price-pred-millionx-agritech.streamlit.app/](https://agri-price-pred-millionx-agritech.streamlit.app/)
-- 💻 Repository: [GitHub - Agri-Price-Pred-millionX](https://github.com/NawrizTurjo/MXB2026-Dhaka-Trio-Leveling-AgriSmartBD)
+- 🌐 Live Demo: [https://agribangla.streamlit.app/](https://agribangla.streamlit.app/)
+- 💻 Repository: [GitHub - AgriBangla](https://github.com/Your-Tribal-Chief/AgriBangla/)
 
 ---
 
